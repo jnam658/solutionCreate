@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+textarea, select {
+  display: block;
+  width: 100%;
+  margin: 8px 0; /* 위아래 간격 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
+}
+p{
+  justify-self: left;
+}
+.button-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  padding: 0 15%;
+  margin-top: 1rem;
+}
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;   /* 안쪽 여백 */
+  font-size: 0.95rem;
+  color: #333;
+
+  border: 1px solid #ccc; /* 기본 테두리 */
+  border-radius: 8px;     /* 둥근 모서리 */
+  background-color: #fafafa; /* 살짝 톤 다운된 배경 */
+  resize: none;       /* 세로만 조절 가능 */
+  transition: all 0.2s ease; /* 부드럽게 변화 */
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #007bff; /* 파란색 강조 */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* 은은한 그림자 */
+  background-color: #fff; /* 포커스 시 하얀 배경 */
+}
+
+select{
+  width: 100%;
+  padding: 0.8rem 1rem;   /* 안쪽 여백 */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+
+  border: 1px solid #ccc; /* 기본 테두리 */
+  border-radius: 8px;     /* 둥근 모서리 */
+  background-color: #fafafa; /* 살짝 톤 다운된 배경 */
+  resize: none;       /* 세로만 조절 가능 */
+  transition: all 0.2s ease; /* 부드럽게 변화 */
+}
