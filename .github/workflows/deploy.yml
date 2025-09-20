@@ -4,13 +4,11 @@ on:
   push:
     branches: [main]
 
-# Pages 권장 설정
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 동시 배포 충돌 방지(권장)
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -20,22 +18,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # Pages 환경 준비(중요)
       - uses: actions/configure-pages@v5
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: "npm"
           cache-dependency-path: solutionCreate/package-lock.json
 
       - name: Install deps
-        run: npm ci
+        run: npm install
         working-directory: solutionCreate
 
       - name: Build
         run: npm run build
+        working-directory: solutionCreate
+
+      - name: Ensure dist exists
+        run: ls -la dist
         working-directory: solutionCreate
 
       - name: SPA fallback (404.html)
