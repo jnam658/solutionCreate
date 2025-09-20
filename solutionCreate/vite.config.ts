@@ -18,5 +18,5 @@ export default defineConfig({
       },
     },
   },
-  base: "/solutionCreate",
+  base: "/solutionCreate/",
 });
