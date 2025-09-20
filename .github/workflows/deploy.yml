@@ -2,6 +2,7 @@ name: Deploy Vite to GitHub Pages
 on:
   push:
     branches: [main]
+
 permissions:
   contents: read
   pages: write
@@ -14,23 +15,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
-
-      - name: Install deps
-        run: npm ci
-        working-directory: solutionCreate # ← 여기!
-
-      - name: Build
-        run: npm run build
-        working-directory: solutionCreate # ← 여기!
-
-      - name: SPA fallback (404.html)
-        run: cp dist/index.html dist/404.html
-        working-directory: solutionCreate # ← 여기!
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: solutionCreate/dist # ← 여기!
+      - run: npm ci
+      - run: npm run build
+      - run: cp dist/index.html dist/404.html # SPA 라우팅 fallback
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
 
   deploy:
     needs: build
