@@ -26,8 +26,8 @@ function SolutionSteps({
       <textarea
         className={styles["videoURL"]}
         placeholder="영상 링크를 입력하세요"
-        value={step.youtubeUrl}
-        onChange={(e) => update(index, { ...step, youtubeUrl: e.target.value })}
+        value={step.youtubeId}
+        onChange={(e) => update(index, { ...step, youtubeId: e.target.value })}
       />
       <textarea
         className={styles["stepgoal"]}

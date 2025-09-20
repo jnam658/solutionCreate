@@ -6,12 +6,12 @@ import { SolutionRepositoryImpl } from "../data/SolutionRepositoryImpl";
 function SolutionHandler() {
   const [Solution, setSolution] = useState<Solution>({
     title: "",
-    description: "",
     category: "",
-    hashtags: [],
+    description: "",
+    hashtags: "",
     videos: [
-      { title: "", youtubeUrl: "", goal: "", question: "" },
-      { title: "", youtubeUrl: "", goal: "", question: "" },
+      { title: "", question: "", goal: "", youtubeId: "", youtubeTitle: "1" },
+      { title: "", question: "", goal: "", youtubeId: "", youtubeTitle: "1" },
     ],
   });
   const addStep = (step: SolutionStep) => {

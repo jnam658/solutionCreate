@@ -29,12 +29,13 @@ function SolutionPage() {
             title: "",
             description: "",
             category: "",
-            hashtags: [],
+            hashtags: "",
             videos: [
               ...vm.Solution.videos,
               {
                 title: "",
-                youtubeUrl: "",
+                youtubeId: "",
+                youtubeTitle: "",
                 goal: "",
                 question: "",
               },
