@@ -7,12 +7,12 @@ export default defineConfig({
   server: {
     proxy: {
       "/user": {
-        target: "https://175.45.220.15.nip.io",
+        target: "",
         changeOrigin: true,
         secure: false,
       },
       "/solution": {
-        target: "https://175.45.220.15.nip.io",
+        target: "",
         changeOrigin: true,
         secure: false,
       },
